@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Asra2 1-99 Genel Sohbet</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  
+  <!-- Google Fonts: Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  
+  <!-- Stil dosyası -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Giriş Ekranı -->
+  <div id="loginScreen">
+  <img src="asra2.ico" alt="Asra2 Logo" class="logo" />
+    <h2>Asra2 Sohbet!</h2>
+    <input type="text" maxlength="10" id="usernameInput" placeholder="İsim giriniz." />
+    <button id="loginButton">Misafir Girişi</button>
+<!-- YÖNETİCİ GİRİŞİ BUTONU -->
+    <button id="adminLoginButton">Yönetici Girişi</button>
+  </div>
+
+<!-- MODAL -->
+<div id="adminModal" class="modal">
+  <div class="modal-content">
+    <span id="closeModal" class="close-button">&times;</span> <!-- Çarpı butonu -->
+    <h2>Yönetici Girişi</h2>
+    <div class="input-group">
+      <span class="icon">👤</span>
+      <input type="text" id="adminName" placeholder="Yönetici Adı">
+    </div>
+    <div class="input-group">
+      <span class="icon">🔒</span>
+      <input type="password" id="adminPassword" placeholder="Şifre">
+    </div>
+    <button id="loginBtn">Giriş Yap</button>
+  </div>
+</div>
+
+<div id="confirmModal" class="modal-overlay hidden">
+  <div class="modal-box">
+    <p id="confirmMessage">Emin misin?</p>
+    <div class="modal-actions">
+      <button id="confirmYes" class="btn btn-danger">Evet</button>
+      <button id="confirmNo" class="btn btn-secondary">Hayır</button>
+    </div>
+  </div>
+</div>
+
+  <!-- Sohbet Ekranı (ilk başta gizli) -->
+  <div id="chatScreen" class="hidden">
+    <div id="chatMessages"></div>
+    <div id="inputArea">
+      <input id="messageInput" type="text" maxlength="60" placeholder="Mesajınızı yazın" />
+      <button id="sendButton">Gönder</button>
+    </div>
+  </div>
+
+  <!-- Aktif Kullanıcılar Listesi -->
+<div id="activeUsersAdminsWrapper">
+  <div id="activeUsersContainer">
+    <h3>Aktif Kullanıcı</h3>
+    <ul id="activeUsersList"></ul>
+  </div>
+
+  <div id="activeAdminsContainer">
+    <h3>Aktif Yetkili</h3>
+    <ul id="activeAdminsList"></ul>
+  </div>
+</div>
+
+<!-- Toast kutusu -->
+<div id="toast" class="toast" data-type="info">
+  <span id="toast-icon">ℹ️</span>
+  <span id="toast-message">Bir bilgi mesajı!</span>
+  <button id="toast-close" onclick="hideToast()">×</button>
+</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
